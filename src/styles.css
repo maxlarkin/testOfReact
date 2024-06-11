@@ -1,0 +1,278 @@
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'), url("./fonts/Inter/Inter-VariableFont_slnt,wght.ttf");
+}
+
+body{
+    font-family: Inter, sans-serif;
+}
+
+div{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+#root{
+    display: block;
+}
+
+.App{
+    width: 100%;
+}
+
+.frame{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%
+}
+
+.carts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.cart {
+    width: 35%;
+    margin: 0.5rem;
+    border: 1px solid #DEE2E6;
+    border-radius: 12px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.delete{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 200ms opacity;
+    z-index: 2;
+}
+.delete:hover{
+    opacity: 1;
+}
+
+#deleteImg{
+    height: 30%;
+    width: auto;
+}
+
+.img{
+    position: relative;
+    height: 70%;
+    overflow: hidden;
+    user-select: none;
+}
+.img img{
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+}
+
+.info{
+    display: flex;
+    margin: 0.5rem 0 0;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 0;
+
+}
+.info h5{
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.description{
+    padding: 0 1rem
+}
+
+.pag-btn{
+    /*height: 3rem;*/
+    /*width: 3rem;*/
+    padding: 12px 16px 12px 16px;
+    border: 1px solid #E9ECEF;
+    background: #ffffff;
+    color: #6C757D;
+}
+.pag-btn:hover{
+    background: #eeeeee;
+}
+
+.pag-btn-active{
+    background: #7749F8;
+    color: white;
+}
+.pag-btn-active:hover{
+    background: #7749F8;
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 2rem;
+    width: 40%;
+}
+
+.chat-block{
+    width: 100%;
+    padding: 1rem;
+}
+.chat-block.ask{
+    text-align: right;
+}
+
+.messages{
+    width: 100%;
+}
+.message{
+    background: #9EC5FE;
+    border-radius: 12px;
+    padding: 1rem;
+    min-height: 3rem;
+    min-width: 40%;
+    max-width: 70%;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.chat-container{
+    display: flex;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+#ans{
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid #DEE2E6;
+    border-radius: 6px;
+}
+#ans::placeholder{
+    color: #ADB5BD;
+}
+
+.open-chat{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    display: none;
+}
+
+.form-add-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    font-size: 16px;
+}
+
+.upload-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+#newCart h5{
+    font-weight: 600;
+    font-size: 20px;
+    margin: 2rem auto 0.5rem auto;
+}
+#newCart input{
+    border: 1px solid #CED4DA;
+    border-radius: 4px;
+    width: 20rem;
+    padding: 1rem;
+}
+#newCart input:focus{
+    outline: none;
+}
+#newCart input::placeholder{
+    font-size: 16px;
+}
+#newCart fieldset{
+    border: none;
+}
+
+#newCartSubmit{
+    margin: 3rem;
+    background: #7749F8;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 1rem 5rem;
+    cursor: pointer;
+}
+
+.form-add-cart #newImg{
+    z-index: -10;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    position: absolute;
+}
+
+.price{
+    display: block;
+}
+
+.resolveInput{
+    border: 2px solid #198754 !important;
+}
+.rejectedInput{
+    border: 2px solid #DC3545 !important;
+}
+
+@media screen and (max-width: 768px) {
+    /*mobile*/
+    .chat{
+        display: none;
+        width: 100%;
+    }
+    .open-chat{
+        display: inline-block;
+    }
+    .container{
+        width: 100%
+    }
+    .cart{
+        width: 80%;
+    }
+    .frame{
+        flex-direction: column;
+    }
+    .upload-block{
+        width: 15rem;
+        height: 15rem;
+    }
+    #newCart input{
+        width: 15rem;
+    }
+}
