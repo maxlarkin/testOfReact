@@ -50,4 +50,3 @@ def category_posts(request, category):
             raise Http404('category is not published')
     except Exception:
         raise Http404('category is not published')
-
